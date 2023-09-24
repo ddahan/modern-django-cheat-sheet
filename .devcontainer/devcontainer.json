@@ -35,6 +35,7 @@
                 "ms-python.vscode-pylance",
                 "ms-python.black-formatter",
                 "charliermarsh.ruff",
+                "ms-toolsai.jupyter",
                 "tamasfe.even-better-toml"
             ],
             "settings": {
