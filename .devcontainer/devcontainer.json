@@ -34,7 +34,6 @@
                 "ms-python.python",
                 "ms-python.vscode-pylance",
                 "ms-python.black-formatter",
-                "charliermarsh.ruff",
                 "ms-toolsai.jupyter",
                 "tamasfe.even-better-toml"
             ],
@@ -45,18 +44,14 @@
                 "files.insertFinalNewline": true,
                 "files.exclude": {
                     "**/__pycache__": true,
-                    "**/.ruff_cache": true
                 },
                 //*********************************************************************
                 // editor
                 //*********************************************************************
-                "editor.rulers": [
-                    90
-                ],
-                "editor.wordWrap": "wordWrapColumn",
-                "editor.wordWrapColumn": 90,
                 "editor.defaultFormatter": null, // overrided per language
-                "editor.tabSize": 2,
+                "editor.detectIndentation": false,
+                "editor.tabSize": 4,
+                "editor.indentSize": "tabSize",
                 "editor.formatOnSave": true,
                 //*********************************************************************
                 // color customizations
@@ -68,12 +63,10 @@
                 //*********************************************************************
                 // python
                 //*********************************************************************
-                "python.languageServer": "Pylance", // used for import suggestions only
-                "python.analysis.ignore": [
-                    "*"
-                ], // disable linting as it would be redundant with Ruff 
+                "python.languageServer": "Pylance",
                 "python.pythonPath": "/usr/local/bin/python",
-                "python.envFile": "${workspaceFolder}/.env",
+                // try strict mode when using stubs
+                "python.analysis.typeCheckingMode": "off",
                 "python.analysis.autoImportCompletions": true,
                 "python.analysis.importFormat": "absolute",
                 "python.analysis.indexing": true,
@@ -84,16 +77,16 @@
                         "includeAllSymbols": true
                     }
                 ],
-                "python.analysis.extraPaths": [
-                    "${workspaceFolder}/dj_apps"
-                    // TODO: add "${workspaceFolder}/dj_apps/<my_app>" for any new app,
-                ],
+                //*********************************************************************
+                // notebooks
+                //*********************************************************************
+                "notebook.formatOnSave.enabled": true,
+                //*********************************************************************
+                // Per-language settings
+                //*********************************************************************
                 "[python]": {
                     "editor.defaultFormatter": "ms-python.black-formatter",
-                    "editor.formatOnSave": true,
-                    "editor.codeActionsOnSave": {
-                        "source.organizeImports": true
-                    }
+                    "editor.formatOnSave": true
                 }
             }
         }

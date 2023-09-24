@@ -14,28 +14,9 @@ dj-database-url = "*" # https://github.com/jazzband/dj-database-url
 psycopg = { extras = [
     "binary",
 ], version = "*" } # https://github.com/psycopg/psycopg
-ruff = "*" # https://github.com/charliermarsh/ruff
 ipdb = "*" # https://github.com/gotcha/ipdb
 ipykernel = "*" # https://github.com/ipython/ipykernel
-
-
-[tool.ruff]
-line-length = 90
-target-version = "py311"
-extend-exclude = ["migrations", "__pycache__"]
-per-file-ignores = {}
-
-[tool.ruff.isort]
-section-order = [
-    "future",
-    "standard-library",
-    "django",
-    "third-party",
-    "local-folder",
-]
-[tool.ruff.isort.sections]
-"django" = ["django"]
-
+django-extensions = "*" # https://github.com/django-extensions/django-extensions
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
