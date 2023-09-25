@@ -6,7 +6,7 @@ import sys
 import django
 
 # Find the project base directory
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = "/workspaces/modern-django-cheat-sheet"  # hardcoded to help imports
 
 # Add the project base directory to the sys.path
 # This means the script will look in the base directory for any module imports
